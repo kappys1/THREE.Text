@@ -48,6 +48,11 @@
         this.material.color.setHex( this.color);
     }
 
+    THREE.Text.prototype.setSize = function(size){
+        this.size = size
+        this.renderGeometry();
+    }
+
     THREE.Text.prototype.setMaterial = function(material){
         this.material = material
         
