@@ -1,6 +1,6 @@
 # THREE.JS TEXT
 [![npm version](https://badge.fury.io/js/three.text.svg)](https://badge.fury.io/js/three.text)
-> easy way to create text meshes for TRHEE.js based on BufferGeometry.
+> easy way to create 2d text meshes for TRHEE.js based on BufferGeometry.
 
 # Install
 
@@ -8,9 +8,10 @@
  npm install three.text --save
 ```
 
+*note: is possible change text dinamically without remove and create the text mesh again*
 
 ### Example
-[play with me](http://jsfiddle.net/ktmpjLjf/2/)
+[play with me](http://jsfiddle.net/ktmpjLjf/9/)
 # How to use
 Include script
 
