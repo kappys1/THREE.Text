@@ -8,7 +8,7 @@
  npm install three.text --save
 ```
 
-*note: is possible change text dinamically without remove and create the text mesh again*
+*note: is possible change the text dinamically without remove and create the text mesh again*
 
 ### Example
 [play with me](http://jsfiddle.net/ktmpjLjf/9/)
@@ -47,6 +47,7 @@ Add to scene or group:
 - **setMaterial** : Change Material of Mesh
 - **setFont** : Change font of Mesh, need a THREE.FontLoader.
 - **setText** : Change text of Mesh
+- **setSize** : Change size of Text
 
 ### Author
 Alex Marcos Gutierrez
