@@ -1,0 +1,31 @@
+{
+  "name": "three.text",
+  "version": "1.0.0",
+  "description": "Mesh Text for THREE.js",
+  "main": "src/THREE.Text.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kappys1/THREE.Text.git"
+  },
+  "author": "Alejandro Marcos Gutierrez <alexsbd1@gmail.com>",
+  "license": "ISC",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "src/THREE.Text.js"
+  ],
+  "keywords": [
+    "text",
+    "threejs",
+    "mesh",
+    "texts",
+    "buffergeometry"
+  ],
+  "bugs": {
+    "url": "https://github.com/kappys1/THREE.Text/issues"
+  },
+  "homepage": "https://github.com/kappys1/THREE.Text#readme"
+}
