@@ -24,6 +24,16 @@
             this.font = parameters.font || loader.parse(font_helvetica);
             this.divisions = parameters.divisions || 2;
             this.size = parameters.size || 20;
+            this._3d = parameters._3d || false;
+            this.extrudeSettings = parameters.extrudeSettings || {
+                steps: 10,
+                amount: 1,
+                bevelEnabled: false,
+                bevelThickness: 1,
+                bevelSize: 1,
+                curveSegments:12,
+                bevelSegments: 5
+            }
             this.geometry = new THREE.BufferGeometry();
             this.color = 0xff0000;
             this.material = parameters.material || new THREE.MeshBasicMaterial({ color:  this.color});
@@ -36,11 +46,14 @@
 
     THREE.Text.prototype.renderGeometry = function() {
         var shapes = this.font.generateShapes( this.text, this.size, this.divisions );
-        var geometry = new THREE.ShapeGeometry( shapes );
+        // var geometry = new THREE.ShapeGeometry( shapes );
+        var geometry = this._3d ?  new THREE.ExtrudeBufferGeometry( shapes, this.extrudeSettings ) : new THREE.ShapeGeometry( shapes );
         geometry.computeBoundingBox();          
+        geometry.computeBoundingSphere();          
         geometry.needsUpdate = true; 
         geometry.uvsNeedUpdate = true;
-        this.geometry.fromGeometry( geometry );
+        console.log(geometry);
+        this.geometry = geometry.clone();
     }
 
     THREE.Text.prototype.setColor = function(color){
@@ -55,7 +68,6 @@
 
     THREE.Text.prototype.setMaterial = function(material){
         this.material = material
-        
     }
 
     THREE.Text.prototype.setFont = function (font) {
@@ -65,6 +77,27 @@
 
     THREE.Text.prototype.setText = function(text) {
         this.text= text;
+        this.renderGeometry();
+    }
+
+    THREE.Text.prototype.transform3d = function() {
+        if(!this._3d){
+            this._3d= true;
+            this.renderGeometry();
+        }
+
+    }
+
+    THREE.Text.prototype.transform2d = function() {
+        if(this._3d){
+            this._3d= false;
+            this.renderGeometry();
+        }
+
+    }
+
+    THREE.Text.prototype.setExtrudeSettings = function(settings) {
+        this.extrudeSettings= settings;
         this.renderGeometry();
     }
 
