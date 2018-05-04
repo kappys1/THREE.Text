@@ -46,7 +46,6 @@
 
     THREE.Text.prototype.renderGeometry = function() {
         var shapes = this.font.generateShapes( this.text, this.size, this.divisions );
-        // var geometry = new THREE.ShapeGeometry( shapes );
         var geometry = this._3d ?  new THREE.ExtrudeBufferGeometry( shapes, this.extrudeSettings ) : new THREE.ShapeGeometry( shapes );
         geometry.computeBoundingBox();          
         geometry.computeBoundingSphere();          
@@ -84,7 +83,6 @@
             this._3d= true;
             this.renderGeometry();
         }
-
     }
 
     THREE.Text.prototype.transform2d = function() {
@@ -92,7 +90,6 @@
             this._3d= false;
             this.renderGeometry();
         }
-
     }
 
     THREE.Text.prototype.setExtrudeSettings = function(settings) {
