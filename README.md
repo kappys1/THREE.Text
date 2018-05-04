@@ -16,7 +16,7 @@
 Include script
 
 ```sh
- <script src="THREE.Text.js"></script>
+ <script src="node_modules/three.text/src/THREE.text.js"></script>
 ```
 If you need include THREE.js in script 
 ```sh

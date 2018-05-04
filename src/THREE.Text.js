@@ -52,7 +52,6 @@
         geometry.computeBoundingSphere();          
         geometry.needsUpdate = true; 
         geometry.uvsNeedUpdate = true;
-        console.log(geometry);
         this.geometry = geometry.clone();
     }
 
