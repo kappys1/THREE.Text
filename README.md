@@ -8,9 +8,10 @@
  npm install three.text --save
 ```
 
+*note: is possible change the text dinamically without remove and create the text mesh again*
 
 ### Example
-[play with me](http://jsfiddle.net/ktmpjLjf/)
+[play with me](http://jsfiddle.net/ktmpjLjf/14/)
 # How to use
 Include script
 
