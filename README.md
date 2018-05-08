@@ -43,7 +43,7 @@ Add to scene or group:
 ```
 **options**
 - **text** : Text to show
-- **font** : Font family of text (default : helvetik)
+- **font** : Font family of text (default : helvetik) , need a string with font route, the lib load font automatically.
 - **divisions** : Divisions of shape ( default : 2)
 - **size** : Size of text (default : 20)
 - **color** : Text color (default : red - 0xff0000)
@@ -54,7 +54,7 @@ Add to scene or group:
 **Additional Method Mesh**
 - **setColor** : For set color of Mesh , use color.setHex() method of material;
 - **setMaterial** : Change Material of Mesh
-- **setFont** : Change font of Mesh, need a THREE.FontLoader.
+- **setFont** : Change font of Mesh, need a string with font route.
 - **setText** : Change text of Mesh
 - **setSize** : Change size text
 - **transform3d** : Transform Mesh to 2d to 3d

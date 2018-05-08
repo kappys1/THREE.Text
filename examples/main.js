@@ -62,7 +62,7 @@ function init() {
    
  	scene.add( mesh );
 	var gui = new dat.GUI();
-  	var menu = gui.addFolder('folder');
+  	var menu = gui.addlder('folder');
     menu.add(meshOption, 'message').onChange(function(){changeText()});
     menu.add(meshOption, 'size', -4, 4).onChange(function(){changeSize()});
     menu.addColor(meshOption, 'color').onChange(function(){changeColor()});

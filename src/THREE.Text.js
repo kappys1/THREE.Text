@@ -17,28 +17,32 @@
             
             THREE.Mesh.call( this );
 
-            var loader = new THREE.FontLoader();
+            this.loader = new THREE.FontLoader();
             this.textShape = new THREE.BufferGeometry();
             
             this.text = parameters.text || "";
-            this.font = parameters.font || loader.parse(font_helvetica);
-            this.divisions = parameters.divisions || 2;
-            this.size = parameters.size || 20;
-            this._3d = parameters._3d || false;
-            this.extrudeSettings = parameters.extrudeSettings || {
-                steps: 10,
-                amount: 1,
-                bevelEnabled: false,
-                bevelThickness: 1,
-                bevelSize: 1,
-                curveSegments:12,
-                bevelSegments: 5
-            }
-            this.geometry = new THREE.BufferGeometry();
-            this.color = 0xff0000;
-            this.material = parameters.material || new THREE.MeshBasicMaterial({ color:  this.color});
-            this.needsUpdate = true;
-            this.renderGeometry();
+            this.font = "";
+            this.loadFont((parameters.font || font_helvetica) ,(font) =>{
+                this.divisions = parameters.divisions || 2;
+                this.size = parameters.size || 20;
+                this._3d = parameters._3d || false;
+                this.extrudeSettings = parameters.extrudeSettings || {
+                    steps: 10,
+                    amount: 1,
+                    bevelEnabled: false,
+                    bevelThickness: 1,
+                    bevelSize: 1,
+                    curveSegments:12,
+                    bevelSegments: 5
+                }
+                this.geometry = new THREE.BufferGeometry();
+                this.color = 0xff0000;
+                this.material = parameters.material || new THREE.MeshBasicMaterial({ color:  this.color});
+                this.needsUpdate = true;
+                this.renderGeometry();
+            });
+    
+           
     }
 
 	THREE.Text.prototype = Object.create( THREE.Mesh.prototype );
@@ -67,10 +71,24 @@
     THREE.Text.prototype.setMaterial = function(material){
         this.material = material
     }
-
+    THREE.Text.prototype.loadFont = async function (font,cb) {
+        if(typeof font === 'string'){
+            await this.loader.load(font,(val=>{
+                this.font = val;
+                cb(this.font);
+            }));
+        }
+        else if(typeof font === 'object'){
+            this.font = this.loader.parse(font);
+            cb(this.font);
+        }
+        
+    }
     THREE.Text.prototype.setFont = function (font) {
-        this.font = font;
-        this.renderGeometry();
+        this.loadFont(font,font =>{
+            this.renderGeometry();
+        });
+       
     } 
 
     THREE.Text.prototype.setText = function(text) {
