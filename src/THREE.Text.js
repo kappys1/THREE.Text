@@ -72,7 +72,7 @@
     THREE.Text.prototype.setMaterial = function(material){
         this.material = material
     }
-    THREE.Text.prototype.loadFont = async function (font,cb) {
+    THREE.Text.prototype.loadFont = function (font,cb) {
         if(typeof font === 'string'){
             await this.loader.load(font,(function (val){
                 this.font = val;
