@@ -25,6 +25,7 @@
             this.font = "";
             this.loadFont((parameters.font || font_helvetica) ,function (font){
                 this.divisions = parameters.divisions || 2;
+                this.font = font;
                 this.size = parameters.size || 20;
                 this._3d = parameters._3d || false;
                 this.extrudeSettings = parameters.extrudeSettings || {
@@ -77,7 +78,7 @@
             await this.loader.load(font,(function (val){
                 this.font = val;
                 cb(this.font);
-            }));
+            }.bind(this)));
         }
         else if(typeof font === 'object'){
             this.font = this.loader.parse(font);
@@ -88,9 +89,9 @@
     THREE.Text.prototype.setFont = function (font) {
         this.loadFont(font,function(font){
             this.renderGeometry();
-        });
+        }.bind(this));
        
-    } 
+    }
 
     THREE.Text.prototype.setText = function(text) {
         this.text= text;

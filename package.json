@@ -1,6 +1,6 @@
 {
   "name": "three.text",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Mesh Text for THREE.js",
   "main": "src/THREE.Text.js",
   "scripts": {
