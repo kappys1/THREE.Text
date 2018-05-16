@@ -41,7 +41,7 @@
                 this.material = parameters.material || new THREE.MeshBasicMaterial({ color:  this.color});
                 this.needsUpdate = true;
                 this.renderGeometry();
-            });
+            }.bind(this));
     
            
     }
