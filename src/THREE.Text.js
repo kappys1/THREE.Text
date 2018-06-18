@@ -37,7 +37,7 @@
                     bevelSegments: 5
                 }
                 this.geometry = new THREE.BufferGeometry();
-                this.color = 0xff0000;
+                this.color = parameters.color || 0xff0000;
                 this.material = parameters.material || new THREE.MeshBasicMaterial({ color:  this.color});
                 this.needsUpdate = true;
                 this.renderGeometry();
@@ -74,7 +74,7 @@
     }
     THREE.Text.prototype.loadFont = function (font,cb) {
         if(typeof font === 'string'){
-            await this.loader.load(font,(function (val){
+            this.loader.load(font,(function (val){
                 this.font = val;
                 cb(this.font);
             }.bind(this)));
@@ -85,6 +85,7 @@
         }
         
     }
+
     THREE.Text.prototype.setFont = function (font) {
         this.loadFont(font,function(font){
             this.renderGeometry();
