@@ -132,12 +132,12 @@
     
     if( typeof exports !== 'undefined' ) {
         if( typeof module !== 'undefined' && module.exports ) {
-            exports = module.exports = { "THREE.Text" : THREE.Text};
+            exports = module.exports = { "Text" : THREE.Text};
         }
-        exports['THREE.Text'] = THREE.Text;
+        exports.Text = THREE.Text;
     }
     else {
-        root['THREE.Text'] = THREE.Text;
+        root.Text = THREE.Text;
     }
 
 }).call(this);;
