@@ -52,7 +52,7 @@ function init() {
     
     meshOption = new FizzyText();
     
-    mesh = new THREE.Text({
+    mesh = new THREE.DText({
         text: meshOption.message,
         size: meshOption.size,
        	color: meshOption.color.replace('#','0x'),

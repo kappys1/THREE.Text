@@ -16,7 +16,7 @@
 Include script
 
 ```sh
- <script src="node_modules/three.text/src/THREE.text.js"></script>
+ <script src="node_modules/three.text/src/THREE.Text.js"></script>
 ```
 If you need include THREE.js in script 
 ```sh
@@ -25,13 +25,13 @@ If you need include THREE.js in script
 
 Create mesh 
 ```sh
-    var textMesh = new THREE.Text({
+    var textMesh = new THREE.DText({
         text: "hello world"
     }); 
 ```
 or 3d:
 ```sh
-    var textMesh = new THREE.Text({
+    var textMesh = new THREE.DText({
         text: "hello world",
         _3d:true
     }); 
