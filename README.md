@@ -10,6 +10,7 @@
 
 *note: is possible change the text dinamically without remove and create the text mesh again*
 
+
 ### Example
 [play with me](http://jsfiddle.net/ktmpjLjf/14/)
 # How to use
@@ -36,6 +37,8 @@ or 3d:
         _3d:true
     }); 
 ```
+
+*note: THREE.DText is correct Syntax*
 
 Add to scene or group:
 ```sh
