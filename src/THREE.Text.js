@@ -46,7 +46,7 @@
     }
 
 	DText.prototype = Object.create( THREE.Mesh.prototype );
-    DText.prototype.constructor = THREE.Text;
+    DText.prototype.constructor = DText;
 
     DText.prototype.renderGeometry = function() {
         var shapes = this.font.generateShapes( this.text, this.size, this.divisions );
@@ -130,6 +130,7 @@
 	};
     
     THREE.DText = DText;
+
     if( typeof exports !== 'undefined' ) {
         if( typeof module !== 'undefined' && module.exports ) {
             exports = module.exports = { DText : THREE.DText};
