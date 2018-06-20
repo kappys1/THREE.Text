@@ -128,8 +128,10 @@
 		return this;
 	
 	};
+    if( THREE ){
+        THREE.DText = DText;
+    }
     
-    THREE.DText = DText;
 
     if( typeof exports !== 'undefined' ) {
         if( typeof module !== 'undefined' && module.exports ) {
