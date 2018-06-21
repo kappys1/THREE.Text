@@ -129,18 +129,19 @@
 	
 	};
     if( THREE ){
-        THREE.DText = DText;
+        THREE.DText = {};
+        THREE.DText = DText; 
     }
     
 
     if( typeof exports !== 'undefined' ) {
         if( typeof module !== 'undefined' && module.exports ) {
-            exports = module.exports = { DText : THREE.DText};
+            exports = module.exports = { DText : DText};
         }
-        exports.DText = THREE.DText;
+        exports.DText = DText;
     }
     else {
-        root.DText = THREE.DText;
+        root.DText = DText;
     }
 
 }).call(this);;
