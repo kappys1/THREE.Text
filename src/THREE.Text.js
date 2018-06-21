@@ -128,7 +128,7 @@
 		return this;
 	
 	};
-    if( THREE ){
+    if( THREE && !Object.isFrozen(THREE)){
         THREE.DText = {};
         THREE.DText = DText; 
     }
