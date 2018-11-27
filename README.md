@@ -12,7 +12,7 @@
 
 
 ### Example
-[play with me](http://jsfiddle.net/ktmpjLjf/14/)
+[play with me](http://jsfiddle.net/ktmpjLjf/19/)
 # How to use
 Include script
 
